@@ -1,0 +1,11 @@
+echo -n 'Введіть назву файлу: '
+read file_name
+if [[ -e $file_name ]]; then
+        echo 'Файл з такою назвою вже існує'
+else
+        if [[ $file_name =~ [0-9]{5,} || $file_name =~ [a-z0-9]{22,} ]]; then
+                echo "Некоректно введена назва"
+        else
+                echo " " > $file_name
+        fi
+fi
